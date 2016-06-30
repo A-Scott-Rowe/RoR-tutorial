@@ -11,7 +11,7 @@ App from the Ruby on Rails tutorial book
 
 ### Start the Server
 
-To srart the server locally
+To start the server locally
 ```ruby
 bundle exec rails s
 ```

@@ -50,15 +50,22 @@ RSpec.describe User, type: :model do
       expect(duplicate_user).to_not be_valid
     end
 
+    it 'should have a lowercase password' do
+      upper_email = 'THISIS@ANUPER.EMAIL'
+      user.email = upper_email
+      user.save
+      expect(user.reload.email).to eq(upper_email.downcase)
+    end
+
     context 'should have a strong password' do
-        it 'will not accept shot passwords' do
-            user.password = user.password_confirmation = 'a' * 5
-            expect(user).to_not be_valid
-        end
-        it 'will not accept blank passwords' do
-            user.password = user.password_confirmation = ' ' * 5
-            expect(user).to_not be_valid
-        end
+      it 'will not accept shot passwords' do
+        user.password = user.password_confirmation = 'a' * 5
+        expect(user).to_not be_valid
+      end
+      it 'will not accept blank passwords' do
+        user.password = user.password_confirmation = ' ' * 5
+        expect(user).to_not be_valid
+      end
     end
   end
 end

@@ -37,7 +37,7 @@ RSpec.describe User, type: :model do
 
     it 'should not accept invalid email addresses' do
       %w(user@example,com user_at_foo.org user.name@example.
-         foo@bar_baz.com foo@bar+baz.com).each do |address|
+         foo@bar_baz.com foo@bar+baz.com foo@bar..com).each do |address|
         user.email = address
         expect(user).to_not be_valid
       end

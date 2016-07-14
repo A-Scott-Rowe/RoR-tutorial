@@ -1,0 +1,28 @@
+Inspecting 10 files
+.......W..
+
+Offenses:
+
+spec/controllers/sessions_controller_spec.rb:12:3: C: [Corrected] Style/IndentationWidth: Use 2 (not 4) spaces for indentation. (https://github.com/bbatsov/ruby-style-guide#spaces-indentation)
+      it 'removes the user and returns 200' do
+  ^^^^
+spec/controllers/sessions_controller_spec.rb:13:5: C: [Corrected] Style/CommentIndentation: Incorrect indentation detected (column 4 instead of 6).
+    # session[:user_id] = 111
+    ^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/sessions_controller_spec.rb:14:5: C: [Corrected] Style/CommentIndentation: Incorrect indentation detected (column 4 instead of 6).
+    # allow(self).to redirecteive(logged_in?) { true }
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/sessions_controller_spec.rb:15:5: C: [Corrected] Style/IndentationWidth: Use 2 (not 0) spaces for indentation. (https://github.com/bbatsov/ruby-style-guide#spaces-indentation)
+    delete :destroy
+    
+spec/controllers/sessions_controller_spec.rb:16:5: C: [Corrected] Style/IndentationConsistency: Inconsistent indentation detected.
+    expect(response).to have_http_status(:redirect)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/sessions_controller_spec.rb:17:5: C: [Corrected] Style/CommentIndentation: Incorrect indentation detected (column 4 instead of 6).
+    # expect(self.current_user).to be_nil
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+spec/controllers/sessions_controller_spec.rb:18:5: W: [Corrected] Lint/BlockAlignment: end at 18, 4 is not aligned with it 'removes the user and returns 200' do at 12, 6.
+    end
+    ^^^
+
+10 files inspected, 7 offenses detected, 7 offenses corrected

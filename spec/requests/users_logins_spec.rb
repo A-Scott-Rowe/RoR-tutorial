@@ -8,6 +8,7 @@ RSpec.describe "UsersLogins", type: :request do
                                 password:    password,
                                 remember_me: remember_me }
   end
+
   describe "GET /users_logins" do
     it "invalid user can't login" do
       get login_path

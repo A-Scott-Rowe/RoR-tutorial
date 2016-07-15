@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   def create_user_session(user)
     log_in user
     params[:session][:remember_me] == '1' ? remember(user) : forget(user)
-    redirect_to user
+    redirect_back_or user
   end
 
   def flash_login_failed

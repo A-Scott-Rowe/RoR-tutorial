@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "UsersEdits", type: :request do
+RSpec.describe 'UsersEdits', type: :request do
   def log_in_as(user, options = {})
     password = options[:password] || 'password'
     remember_me = options[:remember_me] || '1'
@@ -9,13 +9,14 @@ RSpec.describe "UsersEdits", type: :request do
                                 remember_me: remember_me }
   end
 
-  describe "PUT /users_edits" do
+  describe 'PUT /users_edits' do
     let(:user) { create(:user) }
     let(:user1) { create(:user, name: 'Jane', email: 'JDoe@email.com') }
-    it "cannot update with invalid parameters" do
-      log_in_as user
+    it 'cannot update with invalid parameters' do
       get edit_user_path user
-      expect(response).to have_http_status(200)
+      log_in_as user
+      expect(response).to redirect_to edit_user_path(user)
+      expect(response).to have_http_status(:redirect)
       patch user_path(user), user: { name: '',
                                      email: 'not@right',
                                      password: 'foo',

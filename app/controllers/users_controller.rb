@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update, :index]
   before_action :correct_user, only: [:edit, :update]
 
   def new
@@ -28,11 +28,15 @@ class UsersController < ApplicationController
   def update
     @user = User.find params[:id]
     if @user.update_attributes user_params
-      flash[:success] = "User Successfuly Updated!"
+      flash[:success] = 'User Successfuly Updated!'
       redirect_to @user
     else
       render 'edit'
     end
+  end
+
+  def index
+    @user = User.all
   end
 
   private
@@ -43,7 +47,8 @@ class UsersController < ApplicationController
 
   def logged_in_user
     return if logged_in?
-    flash[:danger] = "Please log in!"
+    store_location
+    flash[:danger] = 'Please log in!'
     redirect_to login_url
   end
 

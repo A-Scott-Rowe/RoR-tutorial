@@ -1,76 +1,13 @@
 AllCops:
   Exclude:
-    - bin/**/*
-    - db/**/*
-    - config/boot.rb
-    - rgloader/loader.rb
-    - !ruby/regexp /.*solano.*\.rb$/
-    - !ruby/regexp /.*tddium.*\.rb$/
-    - app/api/**/*
-    - config/unicorn.rb
-    - config/phantom_capture.rb
     - Gemfile
-    - config/initializers/actionpack.rb
-    - cookbooks/vendor/**/*
-    - cookbooks/.kitchen/**/*
-    - td/*
     - tmp/**/*
   DisplayCopNames: true
   DisplayStyleGuide: true
   TargetRubyVersion: 2.2
 Rails:
   Enabled: true
-Encoding:
-  Enabled: false
 LineLength:
-  Max: 180
-MethodLength:
-  Max: 40
+  Max: 120
 Documentation:
-  Enabled: false
-CyclomaticComplexity:
-  Enabled: false
-ClassAndModuleChildren:
-  Enabled: false
-Style/FileName:
-  Enabled: false
-Style/ClassAndModuleChildren:
-  SupportedStyles: compact
-Style/AccessorMethodName:
-  Enabled: false
-ClassLength:
-  Max: 210
-EachWithObject:
-  Enabled: false
-PerceivedComplexity:
-  Enabled: false
-TrivialAccessors:
-  Enabled: false
-Lint/RescueException:
-  Enabled: false
-RedundantSelf:
-  Enabled: false
-Style/AlignParameters:
-  Enabled: false
-Style/Lambda:
-  Enabled: false
-AbcSize:
-  Enabled: false
-Style/BlockDelimiters:
-  Enabled: true
-  Exclude:
-    - spec/**/*_spec.rb # For .change blocks.
-MultilineOperationIndentation:
-  Enabled: false
-
-# The following should be re-enabled for ruby 3 update
-Style/StringLiterals:
-  Enabled: false
-Style/ConditionalAssignment:
-  Enabled: false
-Style/MutableConstant:
-  Enabled: false
-Performance/TimesMap:
-  Enabled: false
-Style/IfInsideElse:
   Enabled: false

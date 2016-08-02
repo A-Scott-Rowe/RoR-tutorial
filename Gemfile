@@ -31,6 +31,9 @@ gem 'bootstrap-sass'
 gem 'bcrypt', '~> 3.1.7'
 gem 'factory_girl_rails', '~> 4.0'
 gem 'simplecov'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

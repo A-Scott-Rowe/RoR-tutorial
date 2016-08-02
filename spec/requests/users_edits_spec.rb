@@ -1,13 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'UsersEdits', type: :request do
-  def log_in_as(user, options = {})
-    password = options[:password] || 'password'
-    remember_me = options[:remember_me] || '1'
-    post login_path, session: { email:       user.email,
-                                password:    password,
-                                remember_me: remember_me }
-  end
+  
 
   describe 'PUT /users_edits' do
     let(:user) { create(:user) }

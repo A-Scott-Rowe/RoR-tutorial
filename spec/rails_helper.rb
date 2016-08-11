@@ -67,4 +67,4 @@ def log_in_as(user, options = {})
     post login_path, session: { email:       user.email,
                                 password:    password,
                                 remember_me: remember_me }
-  end
+end

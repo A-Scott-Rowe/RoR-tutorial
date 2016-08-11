@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'UsersEdits', type: :request do
-  
-
   describe 'PUT /users_edits' do
     let(:user) { create(:user) }
     let(:user1) { create(:user, name: 'Jane', email: 'JDoe@email.com') }

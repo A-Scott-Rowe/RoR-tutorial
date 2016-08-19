@@ -34,12 +34,14 @@ RSpec.describe 'UsersIndices', type: :request do
       it 'does not show the delete buttons for non admin' do
         allow(self).to receive(:document_root_element) { html_document.root }
         log_in_as user
+        get users_path
         assert_select 'a', text: 'delete', count: 0
       end
     end
     context 'admin logged in' do
       it 'should allow admin to delete users' do
         log_in_as admin
+        get users_path
         expect { delete "#{users_path}/#{user.id}", id: user.id }.to change { User.all.count }.by(-1)
       end
       it 'should not show a delete button for the admin user' do

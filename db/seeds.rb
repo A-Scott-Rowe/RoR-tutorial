@@ -20,6 +20,6 @@ User.create!(name: 'Scott',
                email: email,
                password: password,
                password_confirmation: password,
-  activated: true,
-  activated_at: Time.now.utc)
+               activated: true,
+               activated_at: Time.now.utc)
 end

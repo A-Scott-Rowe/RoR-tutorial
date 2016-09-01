@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :micropost do
+    content 'I just ate an orange!'
+    user nil
+  end
+
   factory :user do
     name 'John'
     email 'Doe@email.com'

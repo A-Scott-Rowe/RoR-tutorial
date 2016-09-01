@@ -73,4 +73,13 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe 'user microposts' do
+    let(:user) { create :user }
+
+    it 'deletes all user microposts when user is deleted' do
+      user.microposts.create! content: 'test'
+      expect { user.destroy }.to change { Micropost.count }.by(-1)
+    end
+  end
 end

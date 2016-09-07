@@ -21,3 +21,6 @@ rubocop_result.txt
 
 # Ignore uploaded test images.
 /public/uploads
+
+.idea
+app/views/.DS_Store

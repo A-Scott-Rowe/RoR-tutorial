@@ -22,10 +22,9 @@ RSpec.describe MicropostsController, type: :controller do
       let(:micropost) { create :micropost, user_id: 2 }
       it 'should not let you delete others microposts' do
         user.save
-        # allow().to receive(:current_user) {user}
-        log_in_as user
-        expect(delete(:destroy, id: micropost)).to_not change { Micropost.count }
-        expect(response).to redirect_to root_url
+        micropost.save
+        expect { delete(:destroy, id: micropost) }.to_not change { Micropost.count }
+        expect(response).to redirect_to login_url
       end
     end
   end

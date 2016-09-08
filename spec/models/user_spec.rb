@@ -82,4 +82,16 @@ RSpec.describe User, type: :model do
       expect { user.destroy }.to change { Micropost.count }.by(-1)
     end
   end
+
+  describe 'user follows another user' do
+    let(:user) { create(:user) }
+    let(:user1) { create(:user, name: 'Jane', email: 'JDoe@email.com') }
+    it 'should follow and unfollow a user' do
+      expect(user.following?(user1)).to_not be true
+      user.follow(user1)
+      expect(user.following?(user1)).to be true
+      user.unfollow user1
+      expect(user.following?(user1)).to_not be true
+    end
+  end
 end
